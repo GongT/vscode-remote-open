@@ -1,0 +1,9 @@
+[Unit]
+Description=expose VSCode remote to all user
+
+[Install]
+WantedBy=sockets.target
+
+[Socket]
+ListenStream=/run/vscode/vscode-remote.socket
+Service=vscode-remote.service

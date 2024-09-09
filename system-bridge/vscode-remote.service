@@ -1,0 +1,12 @@
+[Unit]
+Description=expose VSCode remote to all user
+Requires=vscode-remote.socket
+After=vscode-remote.socket
+
+[Service]
+Type=notify
+WorkingDirectory=/tmp
+ExecStart=/usr/bin/bash /usr/local/libexec/start-vscode-remote-proxy.sh
+NotifyAccess=all
+RestartPreventExitStatus=233
+Restart=no
